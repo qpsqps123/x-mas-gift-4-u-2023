@@ -1,0 +1,56 @@
+@import "../abstacts/functions";
+@import "../abstacts/theme";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::selection {
+  color: #eee;
+  background-color: red;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  border: 2px transparent #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: gray;
+  background-clip: padding-box;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+body::-webkit-scrollbar-button:vertical:start:decrement {
+  display: block;
+  height: 1px;
+}
+
+body::-webkit-scrollbar-button:vertical:end:decrement {
+  display: block;
+  height: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  // font-family: ;
+}
+
+a {
+  text-decoration: none;
+}
