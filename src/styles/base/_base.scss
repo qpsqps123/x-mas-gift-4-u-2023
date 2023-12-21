@@ -8,8 +8,8 @@
 }
 
 *::selection {
-  color: #eee;
-  background-color: red;
+  color: var(--primary-color);
+  background-color: var(--foreground-color);
 }
 
 body {
@@ -22,11 +22,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  border: 2px transparent #fff;
+  border: 2px transparent var(--white-color);
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: gray;
+  background-color: var(--gray-color);
   background-clip: padding-box;
   border-radius: 10px;
   border: 2px solid transparent;
@@ -48,7 +48,7 @@ h3,
 h4,
 h5,
 h6 {
-  // font-family: ;
+  font-weight: 600;
 }
 
 a {
