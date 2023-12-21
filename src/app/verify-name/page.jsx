@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import questionSlice from "@/lib/redux/slices/question-slice";
 import ShortAnswerForm from "@/components/ShortAnswerForm/ShortAnserForm";
-import QuestionDescription from "@/components/QuestionDescription/QuestionDescription";
+import Question from "@/components/Question/Question";
 import { answers } from "@/constants/answers";
 
 export default function Page() {
@@ -32,7 +32,7 @@ export default function Page() {
   return (
     <div>
       <Image src="/images/icons/test.png" width={100} height={100} alt="test" />
-      <QuestionDescription text="먼저 본인 확인 절차가 있겠습니다. 이름이 어떻게 되실까요?" />
+      <Question text="먼저 본인 확인 절차가 있겠습니다. 이름이 어떻게 되실까요?" />
       <ShortAnswerForm handleSubmit={handleNameSubmit} />
     </div>
   );
