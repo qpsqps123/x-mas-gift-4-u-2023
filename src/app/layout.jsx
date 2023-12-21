@@ -1,7 +1,7 @@
 import "../styles/globals.scss";
 import classes from "../containers/RootLayout/RootLayout.module.scss";
 import { Noto_Sans_KR } from "next/font/google";
-import StoreProvider from "./lib/redux/StoreProvider";
+import StoreProvider from "@/lib/redux/StoreProvider";
 import PageTransition from "@/components/PageTransition/PageTransition";
 
 const notoSansKr = Noto_Sans_KR({
