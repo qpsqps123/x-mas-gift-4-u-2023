@@ -3,7 +3,6 @@ import { Noto_Sans_KR } from "next/font/google";
 
 const notoSansKr = Noto_Sans_KR({
   subsets: [],
-  display: "swap",
   fallback: ["sans-serif"],
   variable: "--noto-sans-kr",
 });
