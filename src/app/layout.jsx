@@ -1,5 +1,6 @@
 import "../styles/globals.scss";
 import { Noto_Sans_KR } from "next/font/google";
+import StoreProvider from "./lib/storeProvider";
 
 const notoSansKr = Noto_Sans_KR({
   subsets: [],
@@ -15,7 +16,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko-KR">
-      <body className={notoSansKr.className}>{children}</body>
+      <body className={notoSansKr.className}>
+        <StoreProvider>{children}</StoreProvider>
+      </body>
     </html>
   );
 }
