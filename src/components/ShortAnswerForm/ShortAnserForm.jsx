@@ -16,7 +16,7 @@ const ShortAnswerForm = ({ handleSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
       <label className="a11yHidden">답을 작성하고 다음 버튼을 누르세요.</label>
-      <input onChange={handleInputChange} />
+      <input onChange={handleInputChange} autoFocus />
       <button>다음</button>
     </form>
   );
