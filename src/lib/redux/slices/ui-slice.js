@@ -1,11 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialUiState = {};
+const initialUiState = {
+  invalidAnswer: false,
+};
 
 const uiSlice = createSlice({
   name: "ui",
   initialState: initialUiState,
-  reducers: {},
+  reducers: {
+    answerIsInvalid(state, action) {
+      state.invalidAnswer = action.payload;
+    },
+  },
 });
 
 export default uiSlice;
