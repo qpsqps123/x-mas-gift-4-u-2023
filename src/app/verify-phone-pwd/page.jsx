@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import classes from "../../containers/VerifyPhonePwd/VerifyPhonePwd.module.scss";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";

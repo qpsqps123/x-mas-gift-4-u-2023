@@ -1,5 +1,4 @@
 "use client";
-import classes from "../../containers/VerifyName/VerifyName.module.scss";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
