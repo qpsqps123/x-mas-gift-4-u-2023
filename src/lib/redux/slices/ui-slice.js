@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialUiState = {
   invalidAnswer: false,
+  answerCorrect: false,
 };
 
 const uiSlice = createSlice({
@@ -10,6 +11,9 @@ const uiSlice = createSlice({
   reducers: {
     answerIsInvalid(state, action) {
       state.invalidAnswer = action.payload;
+    },
+    answerIsCorrect(state, action) {
+      state.answerCorrect = action.payload;
     },
   },
 });
