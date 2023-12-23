@@ -26,16 +26,16 @@ export default function Question2() {
 
   useEffect(() => {
     dispatch(questionSlice.actions.question2Passed(false));
-    dispatch(uiSlice.actions.answerIsInvalid(false));
-    dispatch(uiSlice.actions.answerIsCorrect(false));
+    dispatch(uiSlice.actions.setAnswerInvalid(false));
+    dispatch(uiSlice.actions.setAnswerCorrect(false));
   }, [dispatch]);
 
   const handleSantaHeightSubmit = (e) => {
     e.preventDefault();
     if (inputValue === answers.question2 && questionPassed[3][1] === false) {
       dispatch(questionSlice.actions.question2Passed(true));
-      dispatch(uiSlice.actions.answerIsInvalid(false));
-      dispatch(uiSlice.actions.answerIsCorrect(true));
+      dispatch(uiSlice.actions.setAnswerInvalid(false));
+      dispatch(uiSlice.actions.setAnswerCorrect(true));
       setTimeout(() => {
         router.push("/question3");
       }, 1000);
@@ -43,7 +43,7 @@ export default function Question2() {
       inputValue !== answers.question2 &&
       questionPassed[3][1] === false
     ) {
-      dispatch(uiSlice.actions.answerIsInvalid(true));
+      dispatch(uiSlice.actions.setAnswerInvalid(true));
     }
   };
 

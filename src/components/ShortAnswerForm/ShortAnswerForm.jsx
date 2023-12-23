@@ -6,7 +6,7 @@ const ShortAnswerForm = ({ handleSubmit }) => {
   const dispatch = useDispatch();
 
   const handleInputChange = (e) => {
-    dispatch(questionSlice.actions.changeInputValue(e.target.value));
+    dispatch(questionSlice.actions.setInputValue(e.target.value));
   };
 
   return (

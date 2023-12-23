@@ -9,7 +9,7 @@ const MultipleChoiceForm = ({ handleSubmit, ...rest }) => {
 
   const inputValue = useSelector((state) => state.question.inputValue);
   const handleInputChange = (e) => {
-    dispatch(questionSlice.actions.changeInputValue(e.target.value));
+    dispatch(questionSlice.actions.setInputValue(e.target.value));
     console.log(inputValue);
   };
 

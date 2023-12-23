@@ -26,16 +26,16 @@ export default function Question5() {
 
   useEffect(() => {
     dispatch(questionSlice.actions.question5Passed(false));
-    dispatch(uiSlice.actions.answerIsInvalid(false));
-    dispatch(uiSlice.actions.answerIsCorrect(false));
+    dispatch(uiSlice.actions.setAnswerInvalid(false));
+    dispatch(uiSlice.actions.setAnswerCorrect(false));
   }, [dispatch]);
 
   const handleSantaVisitedCountriesSubmit = (e) => {
     e.preventDefault();
     if (inputValue === answers.question5 && questionPassed[6][1] === false) {
       dispatch(questionSlice.actions.question5Passed(true));
-      dispatch(uiSlice.actions.answerIsInvalid(false));
-      dispatch(uiSlice.actions.answerIsCorrect(true));
+      dispatch(uiSlice.actions.setAnswerInvalid(false));
+      dispatch(uiSlice.actions.setAnswerCorrect(true));
       setTimeout(() => {
         router.push("/question6");
       }, 1000);
@@ -43,7 +43,7 @@ export default function Question5() {
       inputValue !== answers.question5 &&
       questionPassed[6][1] === false
     ) {
-      dispatch(uiSlice.actions.answerIsInvalid(true));
+      dispatch(uiSlice.actions.setAnswerInvalid(true));
     }
   };
 

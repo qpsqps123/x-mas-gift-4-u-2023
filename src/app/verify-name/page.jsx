@@ -21,8 +21,8 @@ export default function Page() {
 
   useEffect(() => {
     dispatch(questionSlice.actions.nameVerificationPassed(false));
-    dispatch(uiSlice.actions.answerIsInvalid(false));
-    dispatch(uiSlice.actions.answerIsCorrect(false));
+    dispatch(uiSlice.actions.setAnswerInvalid(false));
+    dispatch(uiSlice.actions.setAnswerCorrect(false));
   }, [dispatch]);
 
   const handleNameSubmit = (e) => {
@@ -31,7 +31,7 @@ export default function Page() {
       dispatch(questionSlice.actions.nameVerificationPassed(true));
       router.push("/verify-phone-pwd");
     } else if (inputValue !== answers.name && questionPassed[0][1] === false) {
-      dispatch(uiSlice.actions.answerIsInvalid(true));
+      dispatch(uiSlice.actions.setAnswerInvalid(true));
     }
   };
 

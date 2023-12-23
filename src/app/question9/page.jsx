@@ -26,16 +26,16 @@ export default function Question9() {
 
   useEffect(() => {
     dispatch(questionSlice.actions.question9Passed(false));
-    dispatch(uiSlice.actions.answerIsInvalid(false));
-    dispatch(uiSlice.actions.answerIsCorrect(false));
+    dispatch(uiSlice.actions.setAnswerInvalid(false));
+    dispatch(uiSlice.actions.setAnswerCorrect(false));
   }, [dispatch]);
 
   const handleSantaWillDoSubmit = (e) => {
     e.preventDefault();
     if (inputValue === answers.question9 && questionPassed[10][1] === false) {
       dispatch(questionSlice.actions.question9Passed(true));
-      dispatch(uiSlice.actions.answerIsInvalid(false));
-      dispatch(uiSlice.actions.answerIsCorrect(true));
+      dispatch(uiSlice.actions.setAnswerInvalid(false));
+      dispatch(uiSlice.actions.setAnswerCorrect(true));
       setTimeout(() => {
         router.push("/question10");
       }, 1000);
@@ -43,7 +43,7 @@ export default function Question9() {
       inputValue !== answers.question9 &&
       questionPassed[10][1] === false
     ) {
-      dispatch(uiSlice.actions.answerIsInvalid(true));
+      dispatch(uiSlice.actions.setAnswerInvalid(true));
     }
   };
 

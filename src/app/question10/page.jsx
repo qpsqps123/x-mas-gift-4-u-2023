@@ -26,16 +26,16 @@ export default function Question10() {
 
   useEffect(() => {
     dispatch(questionSlice.actions.question10Passed(false));
-    dispatch(uiSlice.actions.answerIsInvalid(false));
-    dispatch(uiSlice.actions.answerIsCorrect(false));
+    dispatch(uiSlice.actions.setAnswerInvalid(false));
+    dispatch(uiSlice.actions.setAnswerCorrect(false));
   }, [dispatch]);
 
   const handleSantaBirthdaySubmit = (e) => {
     e.preventDefault();
     if (inputValue === answers.question10 && questionPassed[11][1] === false) {
       dispatch(questionSlice.actions.question10Passed(true));
-      dispatch(uiSlice.actions.answerIsInvalid(false));
-      dispatch(uiSlice.actions.answerIsCorrect(true));
+      dispatch(uiSlice.actions.setAnswerInvalid(false));
+      dispatch(uiSlice.actions.setAnswerCorrect(true));
       setTimeout(() => {
         router.push("/open-random-box");
       }, 1000);
@@ -43,7 +43,7 @@ export default function Question10() {
       inputValue !== answers.question10 &&
       questionPassed[11][1] === false
     ) {
-      dispatch(uiSlice.actions.answerIsInvalid(true));
+      dispatch(uiSlice.actions.setAnswerInvalid(true));
     }
   };
 

@@ -22,7 +22,7 @@ const questionSlice = createSlice({
   name: "question",
   initialState: initialUiState,
   reducers: {
-    changeInputValue(state, action) {
+    setInputValue(state, action) {
       state.inputValue = action.payload;
     },
     nameVerificationPassed(state, action) {

@@ -25,8 +25,8 @@ const VerifyPhonePwd = () => {
 
   useEffect(() => {
     dispatch(questionSlice.actions.phonePwdVerificationPassed(false));
-    dispatch(uiSlice.actions.answerIsInvalid(false));
-    dispatch(uiSlice.actions.answerIsCorrect(false));
+    dispatch(uiSlice.actions.setAnswerInvalid(false));
+    dispatch(uiSlice.actions.setAnswerCorrect(false));
   }, [dispatch]);
 
   const handlePhonePwdSubmit = (e) => {
@@ -38,7 +38,7 @@ const VerifyPhonePwd = () => {
       inputValue !== answers.phonePwd &&
       questionPassed[1][1] === false
     ) {
-      dispatch(uiSlice.actions.answerIsInvalid(true));
+      dispatch(uiSlice.actions.setAnswerInvalid(true));
     }
   };
 

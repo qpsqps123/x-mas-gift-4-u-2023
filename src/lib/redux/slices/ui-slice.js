@@ -9,10 +9,10 @@ const uiSlice = createSlice({
   name: "ui",
   initialState: initialUiState,
   reducers: {
-    answerIsInvalid(state, action) {
+    setAnswerInvalid(state, action) {
       state.invalidAnswer = action.payload;
     },
-    answerIsCorrect(state, action) {
+    setAnswerCorrect(state, action) {
       state.answerCorrect = action.payload;
     },
   },

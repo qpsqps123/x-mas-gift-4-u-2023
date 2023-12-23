@@ -26,16 +26,16 @@ export default function Question7() {
 
   useEffect(() => {
     dispatch(questionSlice.actions.question7Passed(false));
-    dispatch(uiSlice.actions.answerIsInvalid(false));
-    dispatch(uiSlice.actions.answerIsCorrect(false));
+    dispatch(uiSlice.actions.setAnswerInvalid(false));
+    dispatch(uiSlice.actions.setAnswerCorrect(false));
   }, [dispatch]);
 
   const handleSantaFavFoodSubmit = (e) => {
     e.preventDefault();
     if (inputValue === answers.question7 && questionPassed[8][1] === false) {
       dispatch(questionSlice.actions.question7Passed(true));
-      dispatch(uiSlice.actions.answerIsInvalid(false));
-      dispatch(uiSlice.actions.answerIsCorrect(true));
+      dispatch(uiSlice.actions.setAnswerInvalid(false));
+      dispatch(uiSlice.actions.setAnswerCorrect(true));
       setTimeout(() => {
         router.push("/question8");
       }, 1000);
@@ -43,7 +43,7 @@ export default function Question7() {
       inputValue !== answers.question7 &&
       questionPassed[8][1] === false
     ) {
-      dispatch(uiSlice.actions.answerIsInvalid(true));
+      dispatch(uiSlice.actions.setAnswerInvalid(true));
     }
   };
 
