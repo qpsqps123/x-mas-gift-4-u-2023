@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialUiState = {
   inputValue: null,
+  currentQuestionNum: null,
   questionPassed: [
     ["verifyName", false],
     ["verifyPhonePwd", false],
@@ -30,6 +31,12 @@ const questionSlice = createSlice({
     },
     phonePwdVerificationPassed(state, action) {
       state.questionPassed[1][1] = action.payload;
+    },
+    setCurrentQuestionNum(state, action) {
+      state.currentQuestionNum = action.payload;
+    },
+    questionPassed(state, action) {
+      state.questionPassed[state.currentQuestionNum + 1][1] = action.payload;
     },
     question1Passed(state, action) {
       state.questionPassed[2][1] = action.payload;
