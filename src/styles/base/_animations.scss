@@ -1,1 +1,220 @@
 @import "../abstacts/functions";
+
+.openRandomBoxFadeOut {
+  animation: randomBoxFadeOut 1s forwards;
+}
+
+.closeBackCurtainAnimation {
+  animation: closeCurtain 0.8s ease-in backwards;
+}
+
+.closeMidCurtainAnimation {
+  animation: closeCurtain 0.8s 0.1s ease-in backwards;
+}
+
+.closeFrontCurtainAnimation {
+  animation: closeCurtain 0.8s 0.2s ease-in backwards;
+}
+
+.openRandomBoxFloatAnimation {
+  animation: floatRandomBox 2s infinite;
+}
+
+.openRandomBoxShakeAndScaleAnimation {
+  animation: clickRandomBox 0.5s, shakeXAxisRandomBox 0.2s 1s 8,
+    shakeXAxisRandomBox 0.1s 2.6s 15, shakeXYAxisRandomBox 0.2s 4.1s 5,
+    scaleRandomBox 1s 4.9s;
+}
+
+.giftContainerPopAnimation {
+  animation: popGift 1.5s 5.4s 1 normal forwards;
+}
+
+.giftImgSpinAnimation {
+  animation: spinGift 1.5s 5.4s;
+}
+
+.giftDescFadeInAnimation {
+  animation: giftDescFadeIn 0.5s 6.9s normal forwards;
+}
+
+// Start page
+@keyframes startPageTitleFadeInAndOut {
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+// Curtain
+@keyframes openCurtain {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes closeCurtain {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes giftDescFadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+// Random box
+@keyframes floatRandomBox {
+  50% {
+    bottom: 25%;
+  }
+
+  100% {
+    bottom: 20%;
+  }
+}
+
+@keyframes clickRandomBox {
+  25% {
+    transform: translate(-50%, -20%) scale(80%);
+  }
+
+  50% {
+    transform: translate(-50%, -20%) scale(110%);
+  }
+
+  75% {
+    transform: translate(-50%, -20%) scale(95%);
+  }
+
+  100% {
+    transform: translate(-50%, -20%) scale(100%);
+  }
+}
+
+@keyframes scaleRandomBox {
+  50% {
+    transform: translate(-50%, -20%) scale(50%);
+  }
+
+  80% {
+    transform: translate(-50%, -20%) scale(200%);
+  }
+
+  90% {
+    transform: translate(-50%, -20%) scale(80%);
+  }
+
+  95% {
+    transform: translate(-50%, -20%) scale(110%);
+  }
+
+  100% {
+    transform: translate(-50%, -20%) scale(100%);
+  }
+}
+
+@keyframes shakeXAxisRandomBox {
+  25% {
+    left: 49%;
+  }
+
+  50% {
+    left: 50%;
+  }
+
+  75% {
+    left: 51%;
+  }
+
+  100% {
+    left: 50%;
+  }
+}
+
+@keyframes shakeXYAxisRandomBox {
+  12% {
+    left: 49%;
+  }
+  25% {
+    left: 50%;
+    bottom: 22%;
+  }
+
+  37% {
+    left: 51%;
+  }
+
+  50% {
+    left: 50%;
+    bottom: 20%;
+  }
+
+  62% {
+    left: 49%;
+  }
+
+  75% {
+    left: 50%;
+    bottom: 18%;
+  }
+
+  87% {
+    left: 51%;
+  }
+
+  100% {
+    bottom: 20%;
+    left: 50%;
+  }
+}
+
+@keyframes randomBoxFadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+// Gift
+@keyframes popGift {
+  30% {
+    opacity: 1;
+  }
+
+  60% {
+    bottom: calc(20% + 200px);
+  }
+
+  70% {
+    bottom: calc(20% + 200px);
+  }
+
+  90% {
+    background-color: transparent;
+  }
+
+  100% {
+    bottom: 20%;
+    z-index: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes spinGift {
+  to {
+    transform: rotate(2880deg);
+  }
+}
