@@ -1,0 +1,35 @@
+@import "../../styles/abstacts/functions";
+@import "../../styles/base/layout";
+
+.openRandomBoxContainer {
+  margin-top: 30px;
+
+  p {
+    font-size: rem(16px);
+    font-weight: 400;
+  }
+}
+
+.openRandomBoxButton {
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  transform: translate(-50%, -20%) scale(100%);
+  border-color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.giftContainer {
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  transform: translate(-50%, -20%);
+  z-index: -1;
+  opacity: 0;
+  text-align: center;
+
+  p {
+    opacity: 0;
+  }
+}
