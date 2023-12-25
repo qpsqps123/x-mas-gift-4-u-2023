@@ -1,0 +1,17 @@
+.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imgAndDescContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+  height: 100%;
+  align-items: center;
+}
