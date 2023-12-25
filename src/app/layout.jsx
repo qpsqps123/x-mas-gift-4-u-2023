@@ -1,15 +1,20 @@
 import "../styles/globals.scss";
 import classes from "../containers/RootLayout/RootLayout.module.scss";
-import { Noto_Sans_KR } from "next/font/google";
+import { Noto_Sans_KR, Mountains_of_Christmas } from "next/font/google";
 import StoreProvider from "@/lib/redux/StoreProvider";
 import PageTransition from "@/components/PageTransition/PageTransition";
-import Link from "next/link";
-import Image from "next/image";
 
 const notoSansKr = Noto_Sans_KR({
   subsets: [],
   fallback: ["sans-serif"],
   variable: "--noto-sans-kr",
+});
+
+const mountainsOfChristmas = Mountains_of_Christmas({
+  weight: ["400"],
+  subsets: ["latin"],
+  fallback: ["serif"],
+  variable: "--mountains-of-christmas",
 });
 
 export const metadata = {
@@ -25,15 +30,12 @@ export default function RootLayout({ children }) {
           <main className={classes.mainWrapper}>
             <h1 className="a11yHidden">X-Mas Gift 4 U</h1>
             <PageTransition />
-            <Link href={"/"}>
-              <Image
-                src="/images/icons/test.png"
-                alt="test"
-                className={classes.homeImg}
-                width={100}
-                height={100}
-              />
-            </Link>
+            <a
+              href="/"
+              className={`${mountainsOfChristmas.className} ${classes.homeLink}`}
+            >
+              X-Mas Gift 4 U.
+            </a>
             <div className={classes.mainContainer}>
               <div className={classes.main}>{children}</div>
             </div>
