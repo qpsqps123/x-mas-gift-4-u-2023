@@ -1,0 +1,42 @@
+@import "../../styles/abstacts/functions";
+@import "../../styles/base/layout";
+
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+
+  fieldset {
+    border: 1.5px solid var(--accent-color);
+    font-size: (rem(12px));
+  }
+
+  label {
+    text-indent: 4px;
+    cursor: pointer;
+  }
+
+  input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: rem(12px);
+    height: rem(12px);
+    border: 1.5px solid var(--accent-color);
+    border-radius: 50%;
+    margin-right: 4px;
+    cursor: pointer;
+  }
+
+  input[type="radio"]:checked {
+    background-color: var(--accent-color);
+    border: 2px solid white;
+    box-shadow: 0 0 0 1.6px var(--accent-color);
+  }
+}
+
+.inputAndLabelContainer {
+  margin: 2px 0;
+}
