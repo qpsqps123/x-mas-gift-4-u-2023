@@ -3,6 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialUiState = {
   invalidAnswer: false,
   answerCorrect: false,
+  randomBoxOpened: false,
+  randomBoxNum: null,
+  randomBoxResultDesc: null,
 };
 
 const uiSlice = createSlice({
@@ -14,6 +17,15 @@ const uiSlice = createSlice({
     },
     setAnswerCorrect(state, action) {
       state.answerCorrect = action.payload;
+    },
+    setRandomBoxOpened(state, action) {
+      state.randomBoxOpened = action.payload;
+    },
+    setRandomBoxNum(state, action) {
+      state.randomBoxNum = action.payload;
+    },
+    setRandomBoxResultDesc(state, action) {
+      state.randomBoxResultDesc = action.payload;
     },
   },
 });
