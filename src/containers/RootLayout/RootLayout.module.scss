@@ -31,25 +31,61 @@
   transform: translateY(-50%);
   background-color: var(--white-color);
   border-radius: 50px;
+  line-height: 1.4;
+  letter-spacing: -1px;
+  font-size: rem(14px);
+  overflow: hidden;
+
+  @include tablet-lg {
+    width: rem(300px);
+    height: 45vh;
+  }
 
   @include tablet-sm {
     width: rem(300px);
+    height: 55vh;
+  }
+
+  @include mobile-lg {
     height: 60vh;
+  }
+
+  @include mobile-sm {
+    height: 80vh;
   }
 }
 
-.main {
+.mainContainer::before {
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: calc(100% - 10px);
   height: calc(100% - 10px);
-  padding: 30px;
   border: 2px var(--accent-color) solid;
-  border-radius: 45px;
+  border-radius: 47px;
 }
 
-.homeImg {
+.main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 30px;
+  height: 100%;
+}
+
+.homeLink {
   position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: rem(30px);
+  text-decoration: none;
+  color: var(--primary-color);
+
+  @include mobile-sm {
+    font-size: rem(20px);
+  }
 }
