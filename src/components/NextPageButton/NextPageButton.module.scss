@@ -1,0 +1,27 @@
+@import "../../styles/abstacts/functions";
+@import "../../styles/base/layout";
+
+.nextButton {
+  display: block;
+  width: 50%;
+  height: rem(30px);
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px var(--black-color);
+  cursor: pointer;
+}
+
+.nextButton:hover {
+  background-color: var(--foreground-color);
+  border: 1px solid var(--foreground-color);
+  color: var(--accent-color);
+}
+
+.nextButton:active {
+  position: relative;
+  top: 2px;
+  left: 2px;
+  box-shadow: none;
+}
