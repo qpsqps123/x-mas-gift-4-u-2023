@@ -1,7 +1,22 @@
 @import "../../styles/abstacts/functions";
 
+.invalidAccessContainer {
+  text-align: center;
+}
+
 .invalidAccess {
   margin-top: 50px;
   font-size: rem(20px);
   text-align: center;
+}
+
+.homeLink {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(---color);
+  text-decoration: none;
+}
+
+.homeLink:hover {
+  text-decoration: underline;
 }
