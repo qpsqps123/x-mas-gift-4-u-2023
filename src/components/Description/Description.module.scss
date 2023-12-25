@@ -1,0 +1,10 @@
+@import "../../styles/abstacts/functions";
+@import "../../styles/base/layout";
+
+.textContainer span {
+  text-decoration: underline;
+}
+
+.smallFont {
+  font-size: rem(12px);
+}
