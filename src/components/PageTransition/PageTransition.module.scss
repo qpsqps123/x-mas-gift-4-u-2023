@@ -1,21 +1,78 @@
-.pageTransitionBackground {
+@import "../../styles/abstacts/functions";
+@import "../../styles/base/layout";
+
+.backCurtain {
   position: absolute;
   top: 0;
-  transform: translateX(80%);
-  // transform: translateX(100%);
   width: 100vw;
   height: 100vh;
-  background-color: var(--background-color);
-  z-index: 10;
+  background-color: #931522;
+  z-index: 100;
+  :global {
+    animation: openCurtain 0.8s 0.2s ease-out forwards;
+  }
 }
 
-.pageTransitionForeground {
+.midCurtain {
   position: absolute;
   top: 0;
-  transform: translateX(90%);
-  // transform: translateX(100%);
   width: 100vw;
   height: 100vh;
-  background-color: var(--foreground-color);
-  z-index: 11;
+  background-color: #a31927;
+  z-index: 101;
+  :global {
+    animation: openCurtain 0.8s 0.1s ease-out forwards;
+  }
+}
+
+.frontCurtain {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ba1f2f;
+  z-index: 102;
+  :global {
+    animation: openCurtain 0.8s ease-out forwards;
+  }
+}
+
+.homePageCurtain {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ba1f2f;
+  z-index: 103;
+  text-align: center;
+}
+
+.homePageTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: rem(60px);
+  color: var(--primary-color);
+  opacity: 0;
+
+  :global {
+    animation: startPageTitleFadeInAndOut 3s 1s forwards;
+  }
+
+  @include tablet-lg {
+    font-size: rem(53px);
+  }
+
+  @include tablet-sm {
+    font-size: rem(43px);
+  }
+
+  @include mobile-lg {
+    font-size: rem(38px);
+  }
+
+  @include mobile-sm {
+    font-size: rem(32px);
+  }
 }
