@@ -1,0 +1,25 @@
+@import "../../styles/abstacts/functions";
+@import "../../styles/base/layout";
+
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.label {
+  font-size: (rem(12px));
+}
+
+.input {
+  border: 1px solid var(--gray-color);
+  height: rem(30px);
+  text-indent: 5px;
+  border-radius: 10px;
+}
+
+.input:focus {
+  outline-color: var(--accent-color);
+}
