@@ -1,0 +1,16 @@
+@import "../../styles/abstacts/functions";
+@import "../../styles/base/layout";
+
+.container {
+  width: rem(225px);
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  box-shadow: 1px 1px 2px var(--black-color);
+  background-color: var(--quaternary-color);
+  color: var(--white-color);
+  z-index: 50;
+}
