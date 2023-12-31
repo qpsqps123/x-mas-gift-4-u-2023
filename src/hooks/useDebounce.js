@@ -1,5 +1,6 @@
 "use client";
 import uiSlice from "@/lib/redux/slices/ui-slice";
+import { useRef } from "react";
 import { useDispatch } from "react-redux";
 
 /**
@@ -9,6 +10,8 @@ import { useDispatch } from "react-redux";
 const useDebounce = () => {
   const dispatch = useDispatch();
 
+  const invalidAnswerDescRef = useRef(null);
+
   /**
    * 사용자가 유효하지 않은 값을 입력했을 때, 인자로 넘겨준 시간만큼 알림을 표시합니다. 본 함수는 디바운스 처리되었습니다.
    * @param {number} showDuration 알림을 표시하는 시간입니다.
@@ -17,11 +20,14 @@ const useDebounce = () => {
     const hideInvalidAnswerDescriptioin = () => {
       dispatch(uiSlice.actions.setAnswerInvalid(false));
     };
-    clearTimeout(hideInvalidAnswerDescriptioin);
+    clearTimeout(invalidAnswerDescRef.current);
 
     dispatch(uiSlice.actions.setAnswerInvalid(true));
 
-    setTimeout(hideInvalidAnswerDescriptioin, showDuration);
+    invalidAnswerDescRef.current = setTimeout(
+      hideInvalidAnswerDescriptioin,
+      showDuration
+    );
   };
 
   return {
