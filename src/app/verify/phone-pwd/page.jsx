@@ -9,7 +9,7 @@ import questionSlice from "@/lib/redux/slices/question-slice";
 import ShortAnswerForm from "@/components/ShortAnswerForm/ShortAnswerForm";
 import InvalidAccessDescription from "@/components/InvalidAccessDescription/InvalidAccessDescription";
 import uiSlice from "@/lib/redux/slices/ui-slice";
-import { answers } from "@/constants/answers";
+import { answerList } from "@/constants/answerList";
 import InvalidAnswerDescription from "@/components/InvalidAnswerDescription/InvalidAnswerDescription";
 import Description from "@/components/Description/Description";
 import { desc } from "@/constants/desc";
@@ -45,7 +45,7 @@ const VerifyPhonePwd = () => {
 
   const handlePhonePwdSubmit = (e) => {
     e.preventDefault();
-    if (inputValue === answers.phonePwd && questionPassed[1][1] === false) {
+    if (inputValue === answerList.phonePwd && questionPassed[1][1] === false) {
       dispatch(questionSlice.actions.phonePwdVerificationPassed(true));
 
       document
@@ -61,7 +61,7 @@ const VerifyPhonePwd = () => {
         router.replace("/question/sa/1");
       }, 2000);
     } else if (
-      inputValue !== answers.phonePwd &&
+      inputValue !== answerList.phonePwd &&
       questionPassed[1][1] === false
     ) {
       debouncedInvalidAnsweDescAlert(1500);

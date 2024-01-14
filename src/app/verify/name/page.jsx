@@ -5,7 +5,7 @@ import React, { useLayoutEffect } from "react";
 import classes from "@/containers/VerifyName/VerifyName.module.scss";
 import questionSlice from "@/lib/redux/slices/question-slice";
 import ShortAnswerForm from "@/components/ShortAnswerForm/ShortAnswerForm";
-import { answers } from "@/constants/answers";
+import { answerList } from "@/constants/answerList";
 import InvalidAnswerDescription from "@/components/InvalidAnswerDescription/InvalidAnswerDescription";
 import uiSlice from "@/lib/redux/slices/ui-slice";
 import Description from "@/components/Description/Description";
@@ -41,7 +41,7 @@ export default function VerifyName() {
 
   const handleNameSubmit = (e) => {
     e.preventDefault();
-    if (inputValue === answers.name && questionPassed[0][1] === false) {
+    if (inputValue === answerList.name && questionPassed[0][1] === false) {
       dispatch(questionSlice.actions.nameVerificationPassed(true));
       document
         .getElementById("backCurtain")
@@ -55,7 +55,10 @@ export default function VerifyName() {
       setTimeout(() => {
         router.replace("/verify/phone-pwd");
       }, 2000);
-    } else if (inputValue !== answers.name && questionPassed[0][1] === false) {
+    } else if (
+      inputValue !== answerList.name &&
+      questionPassed[0][1] === false
+    ) {
       debouncedInvalidAnsweDescAlert(1500);
     }
   };
