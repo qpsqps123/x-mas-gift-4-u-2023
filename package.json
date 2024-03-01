@@ -19,6 +19,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "react-redux": "^9.0.4",
-    "sass": "^1.69.5"
+    "sass": "^1.69.5",
+    "sharp": "^0.33.2"
   }
 }
